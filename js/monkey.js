@@ -4,3 +4,4 @@ try{
 try{
   window.Vue = window.Vue ?? Vue
 }catch{}
+console.log({this:this, window, globalThis});
