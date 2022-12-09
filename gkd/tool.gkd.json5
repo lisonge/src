@@ -1,0 +1,74 @@
+{
+  name: 'APP快捷工具',
+  version: 1,
+  author: 'https://github.com/lisonge',
+  updateUrl: null,
+  appList: [
+    {
+      id: 'com.tencent.mm',
+      groupList: [
+        {
+          key: 1,
+          name: '微信电脑快捷自动登录',
+          activityId: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
+          cd: 300,
+          ruleList: [
+            {
+              key: 1,
+              name: '一个按钮',
+              activityId: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
+              match: 'TextView[text=`取消登录`] - @Button[text=`登录`]',
+              cd: 400,
+            },
+            {
+              key: 2,
+              name: '另一个按钮',
+              activityId: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
+              match: '@TextView[text=`取消登录`] - Button[text=`登录`]',
+              cd: 200,
+              ordered: true,
+            },
+            {
+              key: 3,
+              name: '另一个按钮',
+              activityId: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
+              match: 'TextView[text=`取消登录`] - @Image + Button[text=`登录`]',
+              cd: 200,
+              action: {
+                type: 'KEY',
+                target: 'BACK',
+              },
+            },
+            {
+              key: 4,
+              name: '另一个按钮',
+              activityId: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
+              match: 'TextView[text=`取消登录`] - @Image + Button[text=`登录`]',
+              cd: 200,
+              action: {
+                type: 'CLICK',
+                target: 'SCREEN',
+                target: 'TextView[text=`取消登录`]',
+                position: '50%,50%',
+              },
+            },
+            {
+              key: 5,
+              name: '另一个按钮',
+              activityId: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
+              match: '@TextView[text=`取消登录`] - * + [text] - Button[text=`登录`]',
+              cd: 200,
+            },
+            {
+              key: 6,
+              name: '另一个按钮',
+              activityId: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
+              match: '*[text=``] + [text=``] - *',
+              cd: 200,
+            },
+          ],
+        },
+      ],
+    },
+  ],
+}
